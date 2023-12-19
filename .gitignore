@@ -1,0 +1,6 @@
+db.sqlite3
+.commands
+.env
+.venv
+maps
+__pycache__

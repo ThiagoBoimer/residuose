@@ -1,0 +1,53 @@
+<!-- yourappname/templates/resultados.html -->
+{% block content %}
+
+<body>
+<!-- Replace this with your desired header -->
+    <header>
+        <a href="{% url 'home' %}">Voltar</a>
+        <h2>Resultados</h2>
+    </header>
+
+    {% for empresa in empresas_dados %}
+    <div class="empresas" style="border-color: 
+        {% if empresa.score >= 5 %}green
+        {% elif empresa.score >= 1 and empresa.score < 5 %}yellow
+        {% else %}red
+        {% endif %};">
+        <div class="empresa-header">
+            <h2>{{ empresa.razao_social }}
+            {% if empresa.score >= 5 %}
+                🟢
+            {% elif empresa.score >= 1 and empresa.score < 5 %}
+                🟡
+            {% else %}
+                🔴
+            {% endif %}
+            </h2>
+            <p><strong>Score:</strong> {{ empresa.score }}</p>
+        </div>
+        <div class="empresa-details">
+            <div>
+                <p><strong>Município:</strong> {{ empresa.municipio }}</p>
+                <p><strong>Distância (km):</strong> {{ empresa.distancia }}</p>
+            </div>
+            <div>
+                <p><strong>DDD Telefone:</strong> {{ empresa.ddd_telefone }}</p>
+                <p><strong>Quantidade (ton):</strong> {{ empresa.quantidade }}</p>
+            </div>
+        </div>
+        <p><strong>Destinação Atual:</strong> {{ empresa.destinacao }}</p>
+        <p><strong>CNAE Descrição:</strong> {{ empresa.cnae_descricao }}</p>
+        <p><strong>Situação Cadastral RF:</strong> {{ empresa.situacao_cadastral }}</p>
+        <p><strong>*Custo estimado de transporte (R$):</strong> {{ empresa.custo_transporte }}</p>
+        <p><strong>*Pegada de carbono (kg CO₂):</strong> {{ empresa.pegada_carbono}}</p>
+
+
+        <!-- <a href="#" hx-get="{% url 'get_popup_content' %}?file_name={{ empresa.file_name }}" hx-swap="innerHTML" hx-target="#popup-container">Open Popup</a> -->
+        
+    </div>
+    {% endfor %}
+    <div id="popup-container"></div>
+</body>
+
+{% endblock %}

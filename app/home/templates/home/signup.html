@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/static/css/login_signup.css">
+  </head>
+  <body>
+    <div class="login-container">
+        <h2>Cadastro</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="form-errors">
+                    <p class="error-message">Por favor, revise as informações:</p>
+                    <ul class="error-list">
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% for field in form %}
+                <div class="form-field">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.name == 'password1' %}
+                    <small class="password-tips">No mínimo 8 caracteres <br> Pelo menos uma letra maiúscula e uma minúscula <br> Pelo menos um número e um caracter especial</small>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <input type="submit" name="signup" value="Cadastrar-se">
+        </form>
+    </div>
+</body>
+</html>

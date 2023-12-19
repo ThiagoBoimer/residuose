@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+ul.messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul.messages p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input[type="email"],
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #25283D;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e6b122;
+}
+
+.password-tips {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+/* Add styling for form-level errors */
+.form-errors {
+    background-color: #f8d7da;
+    border: 1px solid #721c24;
+    border-radius: 5px;
+    padding: 10px 20px; /* Adjust the padding to include space for list-style */
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #721c24;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.form-errors ul {
+    list-style: disc;
+    font-size: small;
+    padding: 0;
+    margin: 0;
+}
+
+.error-list {
+    padding-left: 20px; /* Add left padding to create space for bullet points */
+}
+
+.form-errors li {
+    color: #721c24;
+    margin-bottom: 6px; /* Add some space between error messages */
+}
+
+/* Adjust styling for form fields with errors */
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-field input[type="text"],
+.form-field input[type="password"],
+.form-field input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-field input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-field input[type="submit"]:hover {
+    background-color: #0056b3;
+}

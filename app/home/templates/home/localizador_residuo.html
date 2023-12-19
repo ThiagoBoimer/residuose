@@ -1,0 +1,86 @@
+<form id="localizador-form">
+    {% csrf_token %}
+    <div class="form-field">
+        <label for="capitulo">Capítulo:</label>
+        <select id="capitulo" name="capitulo" hx-get="/get_subcapitulos/" hx-trigger="change" hx-target="#subcapitulo" required>
+            <option value="" selected>Selecione o Capítulo</option>
+            {% for item in capitulos %}
+                <option value="{{ item.capitulo }}">{{ item.capitulo }} - {{ item.descricao }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-field">
+        <label for="capitulo">Subcapítulo:</label>
+        <select id="subcapitulo" name="subcapitulo" hx-get="/get_codigos/" hx-trigger="change" hx-target="#codigos" required>
+            {% include 'home/partials/form-subcapitulo.html' %}
+        </select>
+    </div>
+
+    <div class="form-field">
+        <label for="capitulo">Código:</label>
+        <select id="codigos" name="codigos" required>
+            {% include 'home/partials/form-codigo.html' %}
+        </select>
+    </div>
+
+    <div class="form-field">
+        <label for="municipio">Seu município:</label>
+        <select id="municipio" name="municipio" hx-get="/get_municipios/" hx-trigger="load" hx-target="#municipio" required>
+            {% include 'home/partials/form-municipio.html' %}
+        </select>
+    </div>
+
+    <div class="form-field" style="display: flex; gap: 10px;">
+        <div style="flex: 1;">
+            <label for="quantidade">Quantidade:</label>
+            <div class="quantidade-field">
+                <input type="number" id="quantidade" name="quantidade"  min="0.5" step="0.00001" onblur="formatQuantidade(this)" value="0.50000" required>
+                <span class="quantidade-unit" style="font-size: small;">toneladas</span> <!-- Adjust the unit as needed -->
+                <div style="flex: 1;">
+                    <button id="buscar-match" type="submit" hx-post="/match/" hx-swap="innerHTML" hx-target="#localizador-form" hx-indicator="#loading-spinner" onclick="showLoadingText()">
+                        <span id="buscar-text" hx-swap="outerHTML">
+                            Buscar
+                        </span>
+                        <div id="loading-spinner" style="display: none;">
+                            <!-- Add your loading spinner here (e.g., a rotating icon) -->
+                            <span class="htmx-indicator">Carregando...</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</form>
+
+<!-- Add the script for formatting -->
+    <script>
+        function formatQuantidade(input) {
+            input.value = parseFloat(input.value).toFixed(5);
+        }
+
+        function showLoadingText() {
+            var capituloValue = document.getElementById('capitulo').value;
+            var subcapituloValue = document.getElementById('subcapitulo').value;
+            var codigosValue = document.getElementById('codigos').value;
+            var municipioValue = document.getElementById('municipio').value;
+            var quantidadeValue = document.getElementById('quantidade').value;
+
+            if (capituloValue === "" || subcapituloValue === "" || codigosValue === "" || municipioValue === "" || quantidadeValue === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Continue with the loading text and form submission
+            document.getElementById('buscar-text').style.display = 'none';
+            document.getElementById('buscar-match').style.opacity = '0.5';
+            document.getElementById('loading-spinner').style.display = 'inline-block';
+            document.getElementById('buscar-match').disabled = true;
+        }
+        
+    </script>
+
+    
+

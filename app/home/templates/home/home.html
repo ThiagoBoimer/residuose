@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+     <!-- Link Box 1 -->
+    <div id="link-box-1" class="link-box">
+        <details>
+            <summary>Localizador de resíduo</summary>
+            <p>Este módulo é destinado para quem tem conhecimento do resíduo que necessita</p>
+            <p>✅ Realizamos um <i>"match"</i> entre a sua empresa e empresas que possivelmente podem fornecer o resíduo procurado</p>
+            <p>✅ Utilizamos bases de dados públicas em conjunto com dados dos Manifestos de Tranporte de Resíduos (MTR) fornecidos pelo IMA/SC</p>
+            <a id="localizador-start" hx-get="/get_capitulos/" hx-swap="outerHTML" hx-target="#localizador-start" >Iniciar</a>
+        </details>
+    </div>
+
+{% endblock %}

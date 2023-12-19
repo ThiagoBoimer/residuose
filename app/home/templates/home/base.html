@@ -1,0 +1,31 @@
+<!-- yourappname/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/static/css/localizador-form.css">
+    <link rel="stylesheet" type="text/css" href="/static/static/css/form-resultado.css">
+    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+    <title>Residuose</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        <!-- User Info Box -->
+        <div class="user-info-box">
+            <h2>{{ user.name }}</h2>
+            <p>{{ user.email }}</p>
+        </div>
+
+        <!-- Add more links as needed -->
+        <a href="{% url 'logout' %}"><button type="button" class="logout-button">Sair</button></a>
+    </div>
+   
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

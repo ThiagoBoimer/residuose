@@ -1,0 +1,94 @@
+/* Form field */
+.form-field {
+    margin-bottom: 15px;
+}
+
+/* Form container */
+#localizador-form {
+    max-width: 100%;
+    margin-top: 20px;
+    background-color: #f8f8f8; /* Light gray background color */
+    padding: 15px; /* Add some padding for better visual separation */
+    border: 1px solid #ccc; /* Add a border for further distinction */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+}
+
+/* Form field */
+.form-field {
+    margin-bottom: 15px;
+}
+
+/* Form labels */
+#localizador-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Select inputs */
+#localizador-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+    text-align-last: left;
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
+}
+
+/* Option elements within the select */
+#localizador-form select option {
+    text-align: left;
+}
+
+/* Default styling for the button (if needed) */
+#localizador-form button {
+    padding: 10px;
+    background-color: #25283D;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#localizador-form button:hover {
+    background-color: #e6b122;
+}
+
+/* Style for dropdown options */
+#localizador-form select option {
+    white-space: normal; /* Allow text to wrap in options */
+}
+
+/* Style for dropdown optgroup labels */
+#localizador-form select optgroup {
+    white-space: nowrap; /* Prevent optgroup labels from wrapping */
+}
+
+/* Style for Quantidade field */
+#localizador-form .quantidade-field {
+    display: flex;
+    align-items: center;
+}
+
+#localizador-form .quantidade-field input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#localizador-form .quantidade-unit {
+    margin-left: 5px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+#buscar-match {
+    width: 100%;
+    padding-left: 50px;
+}

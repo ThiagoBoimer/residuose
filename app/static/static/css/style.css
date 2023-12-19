@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    width: 100%;
+}
+
+#sidebar {
+    max-width: 250px;
+    width: 200;
+    height: 100%;
+    background: #25283D;
+    padding-top: 20px;
+    position: fixed;
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Display child elements in a column */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Lighten the box shadow */
+    flex: 1;
+}
+
+.user-info-box {
+    background: #04030371;
+    padding: 15px;
+    color: white;
+    margin: 20px;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+.logout-button {
+    margin-top: auto; /* Push the logout button to the bottom */
+    margin-bottom: 50px; /* Add a bottom margin to ensure visibility */
+    background-color: #e6b22253;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+#content {
+    margin-left: 250px;
+    padding: 15px;
+    width: 100%;
+    margin-right: 50px;
+    box-sizing: border-box;
+}
+
+.link-box {
+    background: #f8f8f8; /* Lighter background color */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighten the box shadow */
+}
+
+.link-box details {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-box summary {
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    color: #333; /* Darken the text color */
+    font-size: 18px;
+    background: #ddd; /* Lighten the background color for summary */
+    border: none;
+    text-align: left;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background 0.3s; /* Smooth transition for background color */
+}
+
+.link-box summary:hover {
+    background: #ccc; /* Darken the background color on hover */
+}
+
+.link-box p {
+    color: #555; /* Darken the text color */
+    margin-bottom: 10px;
+}
+
+.link-box a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #e6b122; /* Update link color to a modern blue */
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.link-box a:hover {
+    color: #d5a92e; /* Darken link color on hover */
+    background: #f0f0f0; /* Lighten background color on hover */
+}

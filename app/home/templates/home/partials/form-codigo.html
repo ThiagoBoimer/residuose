@@ -1,0 +1,4 @@
+<option value="" selected>Selecione o código</option>
+{% for item in codigos %}
+    <option value="{{ item.codigo }}">{{ item.codigo }} - {{ item.descricao }}</option>
+{% endfor %}

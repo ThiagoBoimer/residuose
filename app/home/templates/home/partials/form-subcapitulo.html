@@ -1,0 +1,4 @@
+<option value="" selected>Selecione o Subcapítulo</option>
+{% for item in subcapitulos %}
+    <option value="{{ item.subcapitulo }}">{{ item.subcapitulo }} - {{ item.descricao }}</option>
+{% endfor %}

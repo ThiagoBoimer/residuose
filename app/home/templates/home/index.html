@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Residuose</title>
+    <link rel="stylesheet" type="text/css" href="/static/static/css/homepage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap">
+  </head>
+  <body>
+
+    {% if request.user.is_authenticated %}
+      <nav class="navbar">
+        <div class="user-info">
+          <a class="mypage-button"  href="{% url 'home' %}">Minha página</a>
+          <a class="logout-button"  href="{% url 'logout' %}">Sair</a>
+        </div>
+      </nav>
+
+       <!-- Carregar um html a parte aqui -->
+       <h1>Residuose</h1>
+       <p>Transformando resíduos em matéria-prima</p>
+
+    {% else %}
+    <div class="auth-buttons">
+       
+
+        <div class="logo-and-text">
+          <div class="logo">
+            <img src="/static/static/residuose-logo-50.png" alt="Logo">
+          </div>
+          <div class="text">
+            <h1>Residuose</h1>
+          </div>
+        </div>
+          <div class="text-box">
+
+            <div class="text-descrp"> 
+              <p class="header">Transforme</p>
+              <p id="diff-header" class="header">resíduos</p>
+              <p class="header">em matéria-prima</p>
+              <h3>Sistema de <i>match</i> de resíduos sólidos entre indústrias na região de Santa Catarina</h3>
+
+              <p>Utilizamos dados da emissão de <u>Manifestos de Transporte de Resíduos</u> (MTR) para localizar o resíduo que pode se tornar sua matéria-prima.</p>
+              <p>No momento, a aplicação é apenas um protótipo, mas fique a vontade para testar 😊</p> 
+            </div>
+            
+            <div class="log-sign-buttons">
+              <a href="{% url 'signup' %}"><button type="button" class="signup-button">Cadastrar-se</button></a>
+              <a class="login-button" href="{% url 'login' %}">Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+    </div>
+
+    </div>
+    {% endif %}
+
+</body>
+</html>
